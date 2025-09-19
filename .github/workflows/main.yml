@@ -3,7 +3,10 @@ name: Build Binary with Bun
 on:
   push:
     tags:
-      - 'v*' # زمانی که تگ جدیدی با فرمت v* push شود
+      - 'v*'
+
+permissions:
+  contents: write  # این خط را اضافه کنید
 
 jobs:
   build-binary:
@@ -20,6 +23,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # این خط را هم اضافه کنید
 
     - name: Setup Bun
       uses: oven-sh/setup-bun@v1
