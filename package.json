@@ -1,4 +1,11 @@
 {
+  "name": "ollama-local-proxy",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "bun build ./OllamaLocalProxy.js --outfile ./dist/OllamaLocalProxy --target bun --compile",
+    "build:linux": "bun build ./OllamaLocalProxy.js --outfile ./dist/OllamaLocalProxy-linux --target bun --compile",
+    "build:windows": "bun build ./OllamaLocalProxy.js --outfile ./dist/OllamaLocalProxy-windows.exe --target bun --compile"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
